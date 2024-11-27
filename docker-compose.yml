@@ -1,0 +1,21 @@
+services:
+  rdvbot:
+    image: betagouv/rdvbot
+    build: .
+    ports:
+      - "9292:9292"
+    volumes:
+      - ".:/app"
+  mattermost:
+    image: mattermost/mattermost-preview
+    environment:
+      MM_SERVICESETTINGS_ALLOWEDUNTRUSTEDINTERNALCONNECTIONS: "rdvbot"
+    ports:
+      - "8065:8065"
+    volumes:
+      - ${MATTERMOST_CONFIG_PATH}:/mattermost/config:rw
+      - ${MATTERMOST_DATA_PATH}:/mattermost/data:rw
+      - ${MATTERMOST_LOGS_PATH}:/mattermost/logs:rw
+      - ${MATTERMOST_PLUGINS_PATH}:/mattermost/plugins:rw
+      - ${MATTERMOST_CLIENT_PLUGINS_PATH}:/mattermost/client/plugins:rw
+      - ${MATTERMOST_BLEVE_INDEXES_PATH}:/mattermost/bleve-indexes:rw
