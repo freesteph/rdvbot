@@ -7,7 +7,7 @@ module Rdvbot
       properties: {
         title: {
           type: 'string',
-          description: 'The provided event name'
+          description: 'The topic or subject of the event'
         },
         start: {
           type: 'string',
@@ -24,8 +24,11 @@ module Rdvbot
         location: {
           type: 'string',
           description: 'the location of the event'
+        },
+        participants: {
+          type: 'array',
+          description: 'the list of participants'
         }
-
       },
       required: ['title'],
       additionalProperties: false

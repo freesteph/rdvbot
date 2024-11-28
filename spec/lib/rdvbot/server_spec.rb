@@ -4,7 +4,6 @@ require 'spec_helper'
 
 require 'rdvbot/server'
 
-
 RSpec.describe Rdvbot::Server do
   include Rack::Test::Methods
 

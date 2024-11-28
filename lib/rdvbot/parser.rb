@@ -2,6 +2,7 @@
 
 require 'dotenv/load'
 require 'langchain'
+require 'openai'
 
 require_relative 'event/schema'
 
@@ -31,7 +32,7 @@ module Rdvbot
       )
 
       @prompt = Langchain::Prompt::PromptTemplate.new(
-        template: "Parse details of a calendar event.\n{format_instructions}\n Resulting event: {description}",
+        template: "Parse French details of a calendar event.\n{format_instructions}\n Resulting event in French: rendez-vous {description}",
         input_variables: %w[description format_instructions]
       )
 
