@@ -32,7 +32,7 @@ module Rdvbot
       )
 
       @prompt = Langchain::Prompt::PromptTemplate.new(
-        template: "Parse French details of a calendar event.\n{format_instructions}\n Resulting event in French: rendez-vous {description}",
+        template: "Parse French details of a calendar event.\n{format_instructions}\n Resulting event in French: rendez-vous {description}. No formatting, no backticks, just the raw JSON result.",
         input_variables: %w[description format_instructions]
       )
 
