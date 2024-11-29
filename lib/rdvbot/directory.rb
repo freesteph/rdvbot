@@ -9,7 +9,8 @@ module Rdvbot
       Application['rdvbot.api']
         .search_by(username: username)
         .body
-        .first['email']
+        .first
+        &.dig('email')
     end
   end
 end
