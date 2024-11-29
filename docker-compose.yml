@@ -2,6 +2,9 @@ services:
   rdvbot:
     image: betagouv/rdvbot
     build: .
+    environment:
+      RDVBOT_URL: rdvbot:9292/
+      RDVBOT_MATTERMOST_API_URL: http://mattermost:8065/api/v4/
     ports:
       - "9292:9292"
     volumes:
