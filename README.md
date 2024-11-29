@@ -15,7 +15,7 @@ Rdvbot tries to help you organise events like this:
 
 ## TODO
 
-- [ ] confirmation dialog
+- [X] confirmation dialog
 - [ ] ical formatting
 - [ ] email sending
 
