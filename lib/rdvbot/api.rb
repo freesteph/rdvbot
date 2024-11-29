@@ -10,7 +10,7 @@ module Rdvbot
       payload = {
         trigger_id: trigger_id,
         dialog: Application['rdvbot.confirm_dialog'].call(payload),
-        url: ENV.fetch("RDVBOT_URL") + '/confirm'
+        url: "#{ENV.fetch('RDVBOT_URL')}/confirm"
       }
 
       Application['mattermost_api'].post('actions/dialogs/open', payload)

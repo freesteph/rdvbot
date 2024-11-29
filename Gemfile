@@ -17,6 +17,8 @@ group :development, :test do
   gem 'debug'
   gem 'dotenv'
   gem 'guard'
+  gem 'rubocop'
+  gem 'rubocop-rspec'
 end
 
 group :test do

@@ -31,7 +31,7 @@ module Rdvbot
         },
         description: {
           type: 'string',
-          description: 'the content or description of the meeting',
+          description: 'the content or description of the meeting'
         }
       },
       required: ['title'],
