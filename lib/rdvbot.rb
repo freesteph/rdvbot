@@ -2,8 +2,6 @@
 
 require 'dry/system'
 
-require_relative 'rdvbot/event/schema'
-
 class Application < Dry::System::Container
   configure do |config|
     config.root = __dir__
