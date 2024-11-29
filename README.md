@@ -4,6 +4,9 @@ Rdbot is a Mattermost integration that responds to a natural meeting
 request (unstructured human input) and tries to create the right event
 in the sender's calendar.
 
+![out](https://github.com/user-attachments/assets/4acc492d-1464-4ba9-886e-c2355c4d2ba1)
+
+
 ## How it works
 
 Rdvbot tries to help you organise events like this:
