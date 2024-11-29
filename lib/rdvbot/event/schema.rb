@@ -28,6 +28,10 @@ module Rdvbot
         participants: {
           type: 'array',
           description: 'the list of participants'
+        },
+        description: {
+          type: 'string',
+          description: 'the content or description of the meeting',
         }
       },
       required: ['title'],

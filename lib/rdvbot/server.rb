@@ -17,6 +17,7 @@ module Rdvbot
     RECEIVE_CONTRACT = Dry::Validation.Contract do
       params do
         required(:text).filled(:str?)
+        required(:trigger_id).filled(:str?)
       end
     end
 
@@ -24,14 +25,14 @@ module Rdvbot
       result = RECEIVE_CONTRACT.call(request.params)
 
       if result.success?
-        parsed = Application['rdvbot.parser'].call(request.params['text'])
-
-        response = {
-          response_type: 'in_channel',
-          text: "```json\n#{parsed}```"
-        }
-
-        json response
+        Application['rdvbot.parser']
+          .call(request.params['text'])
+          .then do |parsed|
+          Application['rdvbot.api'].create_dialog(
+            request.params['trigger_id'],
+            JSON.parse(parsed)
+          )
+        end
       else
         status 422
         body({ errors: result.errors.to_h }.to_json)
